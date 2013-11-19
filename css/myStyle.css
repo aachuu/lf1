@@ -1,0 +1,319 @@
+.ui-header, .ui-footer{
+	background:rgba(0,0,0,0.2);
+}
+header *, footer *{
+	text-align:center;
+	vertical-align:middle;
+	margin:auto;
+} 
+body{
+	background:white;/*rgba(220,200,100,0.2);*/
+}
+
+.ui-page, .ui-content,  .ui-footer .ui-navbar a {
+	background:transparent !important;
+}
+
+
+.mapDraw{
+	cursor:url(../images/pencil.png),crosshair;
+}
+.smfurl {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+img.phone {
+	right: auto;
+	left: 0px;
+	coursor: pointer;
+	/*
+	float:left; 
+	width:40px; 
+	height:60px; 
+	margin:0px 0px;
+	padding:0px 5px 0px 5px;
+	viewOnMap ui-li-link-alt ui-btn ui-btn-up-c ui-btn-icon-notext*/
+}
+
+img.category {
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin: 20px 60px 20px auto;
+}
+
+img.infCategory {
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin: 20px 0px;
+}
+
+.my-block-a {
+	float: left;
+	width: 20px;
+	height: 100%;
+}
+
+.my-block-b {
+	margin: 0px 0px 0px 25px;
+}
+
+.my-block-c {
+	float: right;
+	width: 30px;
+	height: 30px;
+	margin: 10px 0px;
+}
+
+#mapview {
+	overflow: hidden;
+}
+
+.highlighted {
+	background-color: rgba(200, 100, 100, 0.6);
+}
+
+.touchProof {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(250, 250, 250, 0.3);
+	display: none;
+	z-index: 2000;
+}
+
+.reslist .ui-grid-b .ui-block-a {
+	width: 65%
+}
+
+.liMiddle.lm {
+	margin-left: 42px;
+}
+
+.infWin .lm {
+	margin-left: 35px;
+}
+
+.infWin {
+	bprder: 2px solid red;
+}
+
+.liMiddle.lp {
+	padding-left: 20px;
+}
+
+.openNow {
+	color: red;
+	text-decoration: underline blink;
+	font-size: 8px;
+	font-style: italic;
+	float: left;
+	margin: 0px;
+}
+
+.count-bubble {
+	border: 2px solid white;
+	border-radius: 20px;
+	padding: 2px;
+	z-index: 1000;
+	font-size: 0.75em;
+	display: none;
+	margin: 0 0 0 5%;
+	font-weight: strong;
+}
+
+.count-bubble.red {
+	display: inline;
+	background-color: rgba(250, 50, 50, 0.7);
+}
+
+.count-bubble.blue {
+	display: inline;
+	background-color: rgba(50, 50, 250, 0.7);
+}
+
+.myDetailsContent {
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	box-sizing: border-box;
+}
+/*			.ui-page {
+				backface-visibility: visible;
+			    -webkit-backface-visibility: hidden !important; 
+			}
+			.ui-header {
+			    position:fixed;
+			    z-index:10;
+			    top:0;
+			    width:100%;
+			    height: 40px;
+			}
+			.ui-content {
+			    padding-top: 57px;
+			    padding-bottom: 54px;
+			    overflow: auto;
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			}
+			.ui-footer {
+			    position:fixed;
+			    z-index:10;
+			   bottom:0;
+			   width:100%;
+			}*/
+.lom {
+	right: -22px;
+	top: -3px;
+	position: absolute;
+	float: right;
+	height: 20px
+}
+
+.smfrv .ui-block-b {
+	width: 75%;
+}
+
+.smfrv .ui-block-a {
+	width: 25%;
+}
+
+.smfrv .ui-block-ab {
+	width: 100%;
+}
+
+img.detailsNameImg {
+	flost: left;
+	width: 30px;
+	height: 30px;
+	margin: 0px 5px;
+	position: relative;
+	top: 5px;
+}
+
+img.detailsPhoneImg {
+	float: left;
+	height: 40px;
+	left: 0;
+	position: relative;
+	top: -13px;
+	width: 40px;
+}
+
+.detailsOpenNow {
+	position: absolute;
+	left: 0px;
+	top: -5px;
+	float: left;
+}
+
+nav li img
+{
+	float:center;
+}
+
+.ui-icon-heart{
+	background:url(../images/heart18.png);
+}
+
+.ui-icon-list{
+	background:url(../images/jqm/list18.png);
+}
+
+.ui-icon-searchsetting{
+	background:url(../images/search18.png);
+}
+
+header{
+	touch-overflow: scroll;
+}
+
+.glow
+{
+	box-shadow:0px 0px 8px blue;
+}
+li a{
+	border:1px solid blue;
+}
+
+
+.ui-icon-searchfield::after{
+	display:none !important;
+}
+    
+.ui-input-search{
+    padding:0 10px !important;
+}
+
+footer *{
+	vertical-align:middle;
+	text-align:center;
+}
+
+#popupsearch [data-role="content"] *
+{
+	padding:auto;
+	color:red;
+}
+
+.searchsetting{
+	background-image: url(../images/search18.png);
+	background-repeat: no-repeat;
+	background-position:50% 50%;
+	margin:auto;
+	height:100%;
+}
+
+.searchsetting:active{
+	background-color: #D2413C;
+}
+
+.layers{
+	background-image: url(../images/search18.png);
+	background-repeat: no-repeat;
+	background-position:50% 50%;
+	margin:auto;
+	height:100%;
+}
+
+.layers:active{
+	background-color: #D2413C;
+}
+
+.logo{
+	background-image: url("../images/1.png");
+    background-position: 20% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    height: 100%;
+    padding: 15px 0;
+}
+
+.bgicon{
+	background-image:url(../images/here2.png);
+	background-repeat: norepeat;
+	background-size:cover;
+}
+
+
+.hdr_logo{
+	background:transparent;
+	padding:0px;
+	border:0px;
+	margin:5px 0px !important;
+	background-image:url(../images/1.png); 
+	background-size: 100% 100%;
+	height:20px;
+	width:50px;
+	float:left !important;
+}
+
+

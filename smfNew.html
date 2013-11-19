@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<!--manifest="ca.appcache"> -->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Look for..</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+	<!-- key=AIzaSyBHMx_cgPL_9tW9-0WfSCyT9ONlFeaHnh8& -->
+	
+	<link rel="stylesheet" href="./css/jquery.mobile-1.3.1.css" />
+	<link rel="stylesheet" href="./css/myStyle.css" />
+	
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.mobile-1.3.1.js"></script>
+	
+	<script type="text/javascript" src="./js/smfNew.js"> </script>
+	<!-- 
+	<script type="text/javascript" src="./js/ConstructMarkup.js"> </script>
+	<script type="text/javascript" src="./js/SMFindObject.js"> </script>
+	<script type="text/javascript" src="./js/BigNumber.js"> </script>
+	 -->
+	<!-- <script type="text/javascript" src="./js/map.js"> </script>-->
+	
+</head>
+
+<body onload="initialize()">
+	<article>
+		<div data-role="page" id="mapview" data-transition="slide">
+			<header data-role="header" data-position="fixed" style="touch-overflow: scroll;">
+				<div class="ui-grid-b">
+					<div class="ui-block-a" style="max-width:75px;width:10%;">
+						<img src="./images/1.png" style="width:80%;padding-left:5%;padding-right:15%;"/>
+					</div>
+					<div class="ui-block-b" style="width:75%;">
+						<form id="searchForm"  data-ajax=false action=""><input type="search" name="nameSearch" id="nameSearch" data-mini=true value="" data-theme="d" 
+							 style="" placeHolder="Search Map"></input></form>
+					</div>
+					<div class=" ui-block-c infoBlock mapPanel" >
+						<a style="" id="openOptions" data-icon="searchsetting" data-role="button" data-rel="popup" href="#popuppanel1" data-iconpos="notext" data-origin-to="">Options</a>
+					</div>
+				</div>
+			</header>
+			<div data-role="content" >
+				<div id="mapholder" style="position: absolute; box-sizing: border-box; top: 0px; left: 0px; height: 100%; width: 98%; padding: 0px 1%;">
+				</div>				
+			</div>
+			<div data-role="popup" id="popuppanel1" style="overflow-y:scroll;">
+				<header data-role="header">
+					<h4>my panel header!</h4>
+				 </header>
+				<h4>Search Location Options</h4>
+				<div>
+					<a data-role="button" data-inline=true>Use current location</a>
+					<a href="#" data-rel="back" data-role="button" data-inline=true><div onclick="startDrawing()">Draw on map</div></a>
+					<a data-role="button" data-inline=true><div onclick="clearPrevDrawings()">Clear map</div></a>
+				</div>
+				<h4>Categories:</h4>
+				<div>	
+					<a data-role="button">Select search location</a>
+				</div>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+				<p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p><p> my panel content!</p>
+			</div>
+					
+			<footer data-role="footer" data-position="fixed" style="touch-overflow: scroll">
+				<nav data-role="navbar"  ><!-- data-iconpos="left" -->
+					<ul data-count-theme="e">
+						<li><a href="#search" >Advanced Search</a></li>
+						<li><a href="#results">Result List<span class="count-bubble"></span></a></li>
+						<li><a href="#results">Result List<span class="count-bubble"></span></a></li>
+					</ul>
+				</nav>
+			</footer>
+			 
+			
+		</div>
+		
+		<div data-role="page" id="search" data-transition="slide" data-add-back-btn="true">
+			<header data-role="header" data-position="fixed" style="touch-overflow: scroll" data-tap-toggle="false">
+				<a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext">Settings</a><!-- Settings -->
+				<!-- <a data-role="button" data-rel="back" href="#">Back</a>  -->
+				<h1>SMFind Search Page</h1>
+				<a data-role="button" class="saveSearch" href="#" class="ui-btn-left">Save</a>
+				
+			</header>
+			<div data-role="content">
+				<div style="background-color:red">Hello there!</div>
+			</div>
+			<footer data-role="footer" data-position="fixed" style="touch-overflow: scroll" data-tap-toggle="false">
+				<nav data-role="navbar">
+					<ul data-count-theme="e">
+						<li><a href="#search" class="ui-btn-active ui-state-persist">Search</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+
+		<div data-role="page" id="results" data-transition="slide" data-add-back-btn="true" data-tap-toggle="false">
+			<header data-role="header" data-position="fixed" style="touch-overflow: scroll">
+				<a data-role="button" data-rel="back" href="#">Back</a>
+				<h2>Search Results</h2>
+				<a data-role="button" class="saveSearch" href="#">Save</a>
+			</header>
+			<div data-role="content">
+				<h4 class="resultsHdr" id="resultsHdr">Your Search Results</h4>
+				<div id="resultsPane">
+					<div id="result" data-theme="a" style="width: 95%; height: 40%; overflow-x: hide">
+						<ul id='resultList' data-role='listview' data-inset='true' data-split-icon='gear'></ul>
+					</div>
+					<!-- border:2px solid grey; overflow-y:scroll; -->
+				</div>
+			</div>
+			<footer data-role="footer" data-position="fixed" style="touch-overflow: scroll" data-tap-toggle="false">
+				<nav data-role="navbar">
+					<ul data-count-theme="e">
+						<li><a href="#mapview">Map</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+
+		<div id="settings" data-role="page" data-add-back-btn="true">
+			<header data-role="header"><h3>Settings</h3></header>
+			<div data-role="content">
+				<ul id="storedSearches" data-role="listview"></ul>
+			</div>
+			<footer data-role="footer" data-position="fixed" style="touch-overflow:scroll">
+				<nav data-role="navbar">
+					<ul data-count-theme="e">
+						<li><a href="#results">Results<span class="count-bubble"></span></a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+		
+		<div class='touchProof'></div>
+
+		
+
+	</article>
+</body>
+</html>
+
